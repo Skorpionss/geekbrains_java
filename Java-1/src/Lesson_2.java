@@ -1,7 +1,7 @@
 public class Lesson_2 {
     public static void main(String[] args) {
 
-        doTask2();
+        doTask3();
     }
 
     /**
@@ -45,6 +45,26 @@ public class Lesson_2 {
             System.out.print(mass[i] + " ");
         }
 
+    }
+
+    /**
+     * 3.  Задать массив [ 1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1 ] пройти по нему циклом,
+     * и числа меньшие 6 умножить на 2;
+     */
+    static void doTask3() {
+        int[] mass = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
+        System.out.print("Заданный массив m = ");
+        for (int i = 0; i < mass.length; i++) {
+            System.out.print(mass[i] + " ");
+        }
+        for (int i = 0; i < mass.length; i++) {
+            if (mass[i] < 6) mass[i] = mass[i] * 2;
+        }
+        System.out.println();
+        System.out.print("Результат массив m = ");
+        for (int i = 0; i < mass.length; i++) {
+            System.out.print(mass[i] + " ");
+        }
     }
 
 }
