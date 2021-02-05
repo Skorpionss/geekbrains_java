@@ -1,7 +1,9 @@
 public class Lesson_2 {
     public static void main(String[] args) {
 
-        doTask5();
+        int[] m = {1, 2, 3, 4, 5, 6};
+        int a = 2;
+        doTask7(m, a);
     }
 
     /**
@@ -114,6 +116,46 @@ public class Lesson_2 {
         }
         System.out.println("Максимальный элемент = " + max);
         System.out.println("Минимальный элемент = " + min);
+    }
+
+    /**
+     * 7. **** Написать метод, которому на вход подается одномерный массив и число n (может быть положительным, или отрицательным),
+     * при этом метод должен сместить все элементы массива на n позиций. Элементы смещаются циклично.
+     * Для усложнения задачи нельзя пользоваться вспомогательными массивами.
+     * Примеры: [ 1, 2, 3 ] при n = 1 (на один вправо) -> [ 3, 1, 2 ]; [ 3, 5, 6, 1] при n = -2 (на два влево) -> [ 6, 1, 3, 5 ].
+     * При каком n в какую сторону сдвиг можете выбирать сами.
+     */
+
+    static void doTask7(int[] mass, int n) {
+        System.out.print("Заданный массив m = ");
+        for (int i = 0; i < mass.length; i++) {
+            System.out.print(mass[i] + " ");
+        }
+
+        if (n < 0) {
+            for (int s = n; s < 0; s++) {
+                for (int i = 0; i < mass.length - 1; i++) {
+                    int a1 = mass[i + 1];
+                    mass[i + 1] = mass[i];
+                    mass[i] = a1;
+                }
+            }
+        } else {
+            for (int s = n; s > 0; s--) {
+                for (int i = 0; i < mass.length; i++) {
+                    int a1 = mass[mass.length - 1];
+                    mass[mass.length - 1] = mass[i];
+                    mass[i] = a1;
+
+                }
+            }
+        }
+        System.out.println();
+        System.out.print("Результат массив m = ");
+        for (int i = 0; i < mass.length; i++) {
+            System.out.print(mass[i] + " ");
+        }
+
     }
 
 }
