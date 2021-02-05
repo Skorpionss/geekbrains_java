@@ -1,7 +1,7 @@
 public class Lesson_2 {
     public static void main(String[] args) {
 
-        doTask4();
+        doTask5();
     }
 
     /**
@@ -94,4 +94,26 @@ public class Lesson_2 {
         }
 
     }
+
+    /**
+     * 5. ** Задать одномерный массив и найти в нем минимальный и максимальный элементы (без помощи интернета);
+     */
+
+    static void doTask5() {
+        int[] mass = {3, 4, 1, 0, 13, 11, 6, 54, 3, 6, 23};
+        System.out.print("Заданный массив m = ");
+        for (int i = 0; i < mass.length; i++) {
+            System.out.print(mass[i] + " ");
+        }
+        System.out.println();
+        int max = mass[0];
+        int min = mass[0];
+        for (int i = 1; i < mass.length; i++) {
+            if (max < mass[i]) max = mass[i];
+            if (min > mass[i]) min = mass[i];
+        }
+        System.out.println("Максимальный элемент = " + max);
+        System.out.println("Минимальный элемент = " + min);
+    }
+
 }
