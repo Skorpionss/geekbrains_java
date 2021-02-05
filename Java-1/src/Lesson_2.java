@@ -1,7 +1,7 @@
 public class Lesson_2 {
     public static void main(String[] args) {
 
-        doTask1();
+        doTask2();
     }
 
     /**
@@ -26,6 +26,25 @@ public class Lesson_2 {
         for (int i = 0; i < mass.length; i++) {
             System.out.print(mass[i]);
         }
+    }
+
+    /**
+     * 2.  Задать пустой целочисленный массив размером 8.
+     * С помощью цикла заполнить его значениями 0 3 6 9 12 15 18 21;
+     */
+    static void doTask2() {
+        int[] mass = new int[8];
+        System.out.print("Заданный массив m = ");
+        for (int i = 0; i < mass.length; i++) {
+            System.out.print(mass[i]);
+        }
+        System.out.println();
+        System.out.print("Результат массив m = ");
+        for (int i = 0; i < mass.length; i++) {
+            mass[i] = i * 3;
+            System.out.print(mass[i] + " ");
+        }
+
     }
 
 }
