@@ -1,7 +1,7 @@
 public class Lesson_2 {
     public static void main(String[] args) {
 
-        doTask3();
+        doTask4();
     }
 
     /**
@@ -67,4 +67,31 @@ public class Lesson_2 {
         }
     }
 
+    /**
+     * 4.  Создать квадратный двумерный целочисленный массив (количество строк и столбцов одинаковое)
+     * и с помощью цикла(-ов) заполнить его диагональные элементы единицами;
+     */
+    static void doTask4() {
+        int a = 6;
+        int[][] mass = new int[a][a];
+        System.out.println("Заданный массив m ");
+        for (int i = 0; i < mass.length; i++) {
+            for (int j = 0; j < mass[i].length; j++) {
+                System.out.print(mass[i][j] + " ");
+            }
+            System.out.println();
+        }
+        for (int i = 0; i < mass.length; i++) {
+            mass[i][i] = 1;
+            mass[i][mass.length - 1 - i] = 1;
+        }
+        System.out.println("Результат массив m ");
+        for (int i = 0; i < mass.length; i++) {
+            for (int j = 0; j < mass[i].length; j++) {
+                System.out.print(mass[i][j] + " ");
+            }
+            System.out.println();
+        }
+
+    }
 }
