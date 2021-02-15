@@ -4,6 +4,8 @@ public class Main {
 
     public static void main(String[] args) {
 
+        masSotrudnik();
+
     }
 
     static void masSotrudnik() {
@@ -19,6 +21,13 @@ public class Main {
                 new Sotrudnik("Игнатенко", "Алексей", "Максимович",
                         "сантехник", "waleks33@mail.ru", 2001111, 30000, 38)
         };
+
+
+        for (int i = 0; i < sotrudnik.length; i++) {
+            if (sotrudnik[i].getAge() > 40) {
+                System.out.println(sotrudnik[i]);
+            }
+        }
 
     }
 
