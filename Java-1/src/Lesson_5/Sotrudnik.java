@@ -10,7 +10,8 @@ public class Sotrudnik {
     private int zarplatra;
     private int age;
 
-    public Sotrudnik(String family, String name, String otchestvo, String profi, String email, int number, int zarplatra, int age) {
+    public Sotrudnik(String family, String name, String otchestvo, String profi,
+                     String email, int number, int zarplatra, int age) {
         this.family = family;
         this.name = name;
         this.otchestvo = otchestvo;
@@ -20,4 +21,17 @@ public class Sotrudnik {
         this.zarplatra = zarplatra;
         this.age = age;
     }
+
+    @Override
+    public String toString() {
+        return "Сотрудник{" +
+                "ФИО ='" + family + " " + name + " " + otchestvo + '\'' +
+                ", должность = '" + profi + '\'' +
+                ", email = '" + email + '\'' +
+                ", номер телефона = " + number +
+                ", зарплата = " + zarplatra +
+                ", возраст = " + age +
+                '}';
+    }
+
 }
