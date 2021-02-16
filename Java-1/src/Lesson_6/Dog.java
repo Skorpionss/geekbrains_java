@@ -1,9 +1,15 @@
 package Lesson_6;
 
 public class Dog extends Animal {
+    private static int idDog = 0;
 
     public Dog(String name) {
         super(name);
+        idDog++;
+    }
+
+    public static int getIdDog() {
+        return idDog;
     }
 
     @Override

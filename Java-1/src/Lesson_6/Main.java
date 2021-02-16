@@ -16,6 +16,10 @@ public class Main {
             animals[i].swim(5);
         }
 
+        System.out.printf("%n Всего созданно животных %s", Animal.getIdAnimal());
+        System.out.printf("%n Всего созданно Собак %s", Dog.getIdDog());
+        System.out.printf("%n Всего созданно Кошек %s", Cat.getIdCat());
+
 /** Проверка кода конец*/
 
     }
