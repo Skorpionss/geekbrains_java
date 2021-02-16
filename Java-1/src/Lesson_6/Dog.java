@@ -8,13 +8,16 @@ public class Dog extends Animal {
 
     @Override
     public void run(int l) {
-        System.out.printf("Собака %s пробежала %s м.%n", getName(), l);
-
+        if (l > 0 && l < 500) {
+            System.out.printf("Собака %s пробежала %s м.%n", getName(), l);
+        } else System.out.println("Данное действие недоступно");
     }
 
     @Override
-    public void swim(int l) {
-        System.out.printf("Собака %s проплыла %s м.%n", getName(), l);
 
+    public void swim(int l) {
+        if (l > 0 && l < 10) {
+            System.out.printf("Собака %s проплыла %s м.%n", getName(), l);
+        } else System.out.println("Данное действие недоступно");
     }
 }

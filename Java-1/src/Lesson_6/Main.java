@@ -12,8 +12,8 @@ public class Main {
         };
 
         for (int i = 0; i < animals.length; i++) {
-            animals[i].run(100);
-            animals[i].swim(10);
+            animals[i].run(300);
+            animals[i].swim(5);
         }
 
 /** Проверка кода конец*/
