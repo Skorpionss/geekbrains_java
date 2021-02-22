@@ -20,4 +20,9 @@ public class Plate {
     public void info() {
         System.out.println("Тарелка: " + food);
     }
+
+    public void addFood(int n) {
+        this.food += n;
+    }
+
 }

@@ -13,6 +13,8 @@ public class Main {
 
         Plate plate = new Plate(20);
         plate.info();
+        plate.addFood(10);
+        plate.info();
 
         for (int i = 0; i < cat.length; i++) {
             cat[i].eat(plate);
