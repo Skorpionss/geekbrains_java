@@ -15,6 +15,10 @@ public class Cat {
         return hunger;
     }
 
+    public String getName() {
+        return name;
+    }
+
     public void setHunger(boolean hunger) {
         this.hunger = hunger;
     }
