@@ -10,7 +10,6 @@ public class Cat {
     }
 
 
-
     public void eat(Plate p) {
 
         p.decreaseFood(apperite);
