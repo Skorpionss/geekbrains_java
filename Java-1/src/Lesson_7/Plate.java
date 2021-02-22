@@ -7,11 +7,14 @@ public class Plate {
         this.food = food;
     }
 
-    public void decreaseFood(int n) {
+    public boolean decreaseFood(int n) {
         if (food - n < 0) {
             System.out.println("Кот не может поесть, еды недостаточно");
-        } else food -= n;
-
+            return false;
+        } else {
+            food -= n;
+            return true;
+        }
     }
 
     public void info() {
