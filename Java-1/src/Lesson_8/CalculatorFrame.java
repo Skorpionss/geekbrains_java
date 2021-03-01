@@ -12,26 +12,12 @@ public class CalculatorFrame extends JFrame {
 
         setLayout(new BorderLayout());
 
-        JPanel top = new JPanel();
-        top.setLayout(new BorderLayout());
-        JTextField inputField = new JTextField();
-        inputField.setEditable(false);
-        top.add(inputField, BorderLayout.CENTER);
-        add(top, BorderLayout.NORTH);
+        TopFrame top = new TopFrame();
+        add(top.getPanel(), BorderLayout.NORTH);
 
-        JPanel button = new JPanel();
-        button.setLayout(new GridLayout(5, 3));
-        for (int i = 0; i <= 9; i++) {
-            JButton btn = new JButton(String.valueOf(i));
-            button.add(btn);
-        }
-        add(button, BorderLayout.CENTER);
+        BottomFrame button = new BottomFrame();
+        add(button.getPanel(), BorderLayout.CENTER);
 
-        button.add(new JButton("="));
-        button.add(new JButton("C"));
-        button.add(new JButton("+"));
-        button.add(new JButton("-"));
-        button.add(new JButton("SQRT"));
 
         setVisible(true);
     }
