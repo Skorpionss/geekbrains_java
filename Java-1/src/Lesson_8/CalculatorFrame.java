@@ -15,7 +15,7 @@ public class CalculatorFrame extends JFrame {
         TopFrame top = new TopFrame();
         add(top.getPanel(), BorderLayout.NORTH);
 
-        BottomFrame button = new BottomFrame();
+        BottomFrame button = new BottomFrame(top.getInputField());
         add(button.getPanel(), BorderLayout.CENTER);
 
 
