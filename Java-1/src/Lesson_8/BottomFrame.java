@@ -52,24 +52,23 @@ public class BottomFrame {
                 } else {
 
 
+                    right = Integer.parseInt(inputField.getText());
+                    switch (operacia) {
+                        case ("+"):
+                            inputField.setText(String.valueOf(left + right));
+                            break;
+                        case ("-"):
+                            inputField.setText(String.valueOf(left - right));
+                            break;
+                        case ("/"):
+                            inputField.setText(String.valueOf(left / right));
+                            break;
+                        case ("*"):
+                            inputField.setText(String.valueOf(left * right));
+                            break;
+                    }
 
-                right = Integer.parseInt(inputField.getText());
-                switch (operacia) {
-                    case ("+"):
-                        inputField.setText(String.valueOf(left + right));
-                        break;
-                    case ("-"):
-                        inputField.setText(String.valueOf(left - right));
-                        break;
-                    case ("/"):
-                        inputField.setText(String.valueOf(left / right));
-                        break;
-                    case ("*"):
-                        inputField.setText(String.valueOf(left * right));
-                        break;
                 }
-
-            }
             }
         });
         panel.add(ravno);
@@ -90,10 +89,9 @@ public class BottomFrame {
         plus.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (ptochka){
+                if (ptochka) {
                     dleft = Double.parseDouble(inputField.getText());
-                }
-                else {
+                } else {
                     left = Integer.parseInt(inputField.getText());
                 }
 
@@ -108,10 +106,9 @@ public class BottomFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                if (ptochka){
+                if (ptochka) {
                     dleft = Double.parseDouble(inputField.getText());
-                }
-                else {
+                } else {
                     left = Integer.parseInt(inputField.getText());
                 }
 
@@ -121,16 +118,25 @@ public class BottomFrame {
         });
         panel.add(minus);
 
-        panel.add(new JButton("SQRT"));
+
+        JButton sqrt = new JButton("SQRT");
+        sqrt.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dleft = Double.parseDouble(inputField.getText());
+                dleft = Math.sqrt(dleft);
+                inputField.setText(String.valueOf(dleft));
+            }
+        });
+        panel.add(sqrt);
 
         JButton delim = new JButton("/");
         delim.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (ptochka){
+                if (ptochka) {
                     dleft = Double.parseDouble(inputField.getText());
-                }
-                else {
+                } else {
                     left = Integer.parseInt(inputField.getText());
                 }
 
@@ -144,10 +150,9 @@ public class BottomFrame {
         umnoshit.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (ptochka){
+                if (ptochka) {
                     dleft = Double.parseDouble(inputField.getText());
-                }
-                else {
+                } else {
                     left = Integer.parseInt(inputField.getText());
                 }
 
