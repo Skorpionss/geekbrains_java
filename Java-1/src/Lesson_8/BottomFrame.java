@@ -10,6 +10,9 @@ public class BottomFrame {
     private int left;
     private int right;
     private String operacia;
+    private boolean ptochka;
+    private double dleft;
+    private double dright;
 
     public BottomFrame(JTextField inputField) {
         panel = new JPanel();
@@ -27,6 +30,29 @@ public class BottomFrame {
         ravno.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
+                if (ptochka) {
+
+                    dright = Double.parseDouble(inputField.getText());
+                    switch (operacia) {
+                        case ("+"):
+                            inputField.setText(String.valueOf(dleft + dright));
+                            break;
+                        case ("-"):
+                            inputField.setText(String.valueOf(dleft - dright));
+                            break;
+                        case ("/"):
+                            inputField.setText(String.valueOf(dleft / dright));
+                            break;
+                        case ("*"):
+                            inputField.setText(String.valueOf(dleft * dright));
+                            break;
+                    }
+
+                } else {
+
+
+
                 right = Integer.parseInt(inputField.getText());
                 switch (operacia) {
                     case ("+"):
@@ -44,6 +70,7 @@ public class BottomFrame {
                 }
 
             }
+            }
         });
         panel.add(ravno);
 
@@ -54,6 +81,7 @@ public class BottomFrame {
             public void actionPerformed(ActionEvent e) {
                 inputField.setText("");
                 left = 0;
+                ptochka = false;
             }
         });
         panel.add(clear);
@@ -62,7 +90,13 @@ public class BottomFrame {
         plus.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                left = Integer.parseInt(inputField.getText());
+                if (ptochka){
+                    dleft = Double.parseDouble(inputField.getText());
+                }
+                else {
+                    left = Integer.parseInt(inputField.getText());
+                }
+
                 inputField.setText("");
                 operacia = "+";
             }
@@ -73,7 +107,14 @@ public class BottomFrame {
         minus.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                left = Integer.parseInt(inputField.getText());
+
+                if (ptochka){
+                    dleft = Double.parseDouble(inputField.getText());
+                }
+                else {
+                    left = Integer.parseInt(inputField.getText());
+                }
+
                 inputField.setText("");
                 operacia = "-";
             }
@@ -86,7 +127,13 @@ public class BottomFrame {
         delim.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                left = Integer.parseInt(inputField.getText());
+                if (ptochka){
+                    dleft = Double.parseDouble(inputField.getText());
+                }
+                else {
+                    left = Integer.parseInt(inputField.getText());
+                }
+
                 inputField.setText("");
                 operacia = "/";
             }
@@ -97,12 +144,30 @@ public class BottomFrame {
         umnoshit.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                left = Integer.parseInt(inputField.getText());
+                if (ptochka){
+                    dleft = Double.parseDouble(inputField.getText());
+                }
+                else {
+                    left = Integer.parseInt(inputField.getText());
+                }
+
                 inputField.setText("");
                 operacia = "*";
             }
         });
         panel.add(umnoshit);
+
+        JButton zapitai = new JButton(",");
+        zapitai.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                left = Integer.parseInt(inputField.getText());
+                inputField.setText(left + ".");
+                ptochka = true;
+
+            }
+        });
+        panel.add(zapitai);
 
     }
 
